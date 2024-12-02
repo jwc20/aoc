@@ -17,22 +17,25 @@ def main():
 		data_a.append(int(pair[0]))
 		data_b.append(int(pair[1].replace("\n", "")))
 	
-	data_a.sort()
-	data_b.sort()
 
-	i = 0
-	distances = []
+	dict = {}
 
-	while i < len(data_a):
-		distances.append(abs(data_a[i] - data_b[i]))
-		i+=1
 
-	# print(distances)
+	for x in data_a:
+		print(dict)
+		i=0
+		while i < len(data_b) - 1:
+			if x == data_b[i]:
+				print(type(dict[x]))
+				dict[x] += 1
+				data_b.pop(i)
+			else:
+				dict[x] = 1
 
-	print(sum(distances))
+			i+=1
 
-	return sum(distances)
-
+	print(dict)
+	return
 
 
 
